@@ -1,7 +1,22 @@
-import Image from 'next/image'
+import { categories } from '@/constants';
+import fetchNews from '@/lib/fetchNews';
+import NewsList from './NewsList';
+import response from '../response.json'
 
-export default function Home() {
+
+export default async function Home() {
+
+  const news: NewsResponse =  response || (await fetchNews(categories.join(','))); 
+
+  console.log(news);
+  
   return (
-    <div>HomePage</div>
+
+    <div>
+
+      {/* NewsList news */}
+        <NewsList news={news} /> 
+
+    </div>
   )
 }
