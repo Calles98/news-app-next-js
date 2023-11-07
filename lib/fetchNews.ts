@@ -64,7 +64,7 @@ const fetchNews =async (
         }),
     }); 
 
-    console.log("LOADING NEW DATA FROM API for category >>> ", category, keywords);
+    //console.log("LOADING NEW DATA FROM API for category >>> ", category, keywords);
     
 
     // sort function 
